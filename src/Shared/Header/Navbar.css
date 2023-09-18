@@ -1,0 +1,16 @@
+.navbar.bg-base-100 {
+    background: transparent;
+}
+.navbar.bg-base-100::after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #000;
+    content: "";
+    height: 70px;
+    z-index: -1;
+    opacity: 0.3
+}
+
+

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// carousel image center
+ul.thumbs.animated {
+    text-align: center !important;
+}
+// carousel dots color
+.carousel .control-dots .dot.selected {
+    background: #007AFF !important;
+}
+.carousel .control-dots .dot{
+    opacity: 1 !important;
+}
+
+
+ul.thumbs.animated {
+    text-align: center;
+}
