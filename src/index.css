@@ -4,17 +4,24 @@
 
 // carousel image center
 ul.thumbs.animated {
-    text-align: center !important;
+  text-align: center !important;
 }
 // carousel dots color
 .carousel .control-dots .dot.selected {
-    background: #007AFF !important;
+  background: #007aff !important;
 }
-.carousel .control-dots .dot{
-    opacity: 1 !important;
+.carousel .control-dots .dot {
+  opacity: 1 !important;
 }
-
 
 ul.thumbs.animated {
-    text-align: center;
+  text-align: center;
+}
+
+// our menu
+.ourmenu h4 {
+  color: #d99904;
+}
+.ourmenu h2 {
+  color: #ffff;
 }
