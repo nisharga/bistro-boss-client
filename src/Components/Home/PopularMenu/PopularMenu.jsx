@@ -13,7 +13,7 @@ export const PopularMenu = () => {
         })
         
     }, [menu])
-    console.log(Array.isArray(menu))
+    
   return (
     <div className="py-[60px]">
        <SectionTitle
