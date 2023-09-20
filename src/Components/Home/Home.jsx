@@ -5,6 +5,7 @@ import Featured from "./Featured/Featured"
 import OurMenu from "./OurMenu/OurMenu"
 import { PopularMenu } from "./PopularMenu/PopularMenu"
 import Slider from "./Slider/Slider"
+import Tesmonial from "./Testimonial/Tesmonial"
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
           <Callus/>
           <Featured/>
           <OurMenu/>
+          <Tesmonial/>
         </div>
     </div>
   )
