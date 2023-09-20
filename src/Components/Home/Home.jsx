@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async"
 import Bannar from "./Bannar/Bannar"
 import Callus from "./Callus/Callus"
 import { Category } from "./Category/Category"
@@ -11,6 +12,9 @@ const Home = () => {
   return (
     <div>
         <div className="">
+          <Helmet>
+              <title>Bistro Boss | Homepage</title>
+          </Helmet>
           <Slider/>
           <Category/>
           <Bannar/>
