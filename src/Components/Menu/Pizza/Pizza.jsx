@@ -15,7 +15,7 @@ const Pizza = ({pizzaBG, pizza}) => {
     </div>
     <FavouriteFoodButton
       btnText="ORDER YOUR FAVOURITE FOOD"
-      to="/"
+      to="/shop"
     />
     </div>
   )

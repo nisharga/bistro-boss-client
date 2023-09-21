@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
 import featured from "../../../assets/Homepage/featured.jpg";
 const OurMenu = () => {
@@ -18,10 +19,10 @@ const OurMenu = () => {
                 <p className="text-lg">March 20, 2023</p>
                 <p className="text-lg">WHERE CAN I GET SOME?</p>
                 <p className="pr-4 py-3">Craving something delicious? Explore our curated selection of local eateries and popular food delivery services. From mouthwatering meals to delightful desserts, discover a variety of options to satisfy your cravings. Order now and treat yourself to a delightful dining experience!</p>
-                <button
-                onClick={() => alert("HI")}
+                <Link
+                to="/shop"                
                 className=" text-[#fff] font-bold uppercase border-b-900 border-b rounded-bl rounded-br border-white pb-3 mt-5 z-10 cursor-pointer" 
-                > View Full Menu</button>  
+                > View Full Menu</Link>  
             </div>
        </div>
     </div>

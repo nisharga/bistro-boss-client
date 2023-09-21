@@ -2,6 +2,7 @@
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle"
 import MenuItem from "../../../Shared/MenuItem/MenuItem"
 import useMenu from "../../../hooks/useMenu"
+import { Link } from "react-router-dom"
 
 export const PopularMenu = () => {
     const [menu] = useMenu([])
@@ -22,10 +23,10 @@ export const PopularMenu = () => {
         
       </div>
       <div className="text-center">
-          <button className=" text-[#1F2937] font-bold uppercase border-b-900 border-b rounded-bl rounded-br border-black pb-3 mt-5"
-          onClick={() => alert("HELLO BANGLADESH")}
+          <Link className=" text-[#1F2937] font-bold uppercase border-b-900 border-b rounded-bl rounded-br border-black pb-3 mt-5"
+          to="/shop"
           >
-          View Full Menu</button>
+          View Full Menu</Link>
         </div>
     </div>
   )
