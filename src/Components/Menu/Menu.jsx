@@ -5,6 +5,7 @@ import dessertBG from "../../assets/menu/dessert-bg.jpeg"
 import useMenu from "../../hooks/useMenu"  
 import TodaysOffer from "./TodaysOffer/TodaysOffer"
 import SectinonBannar from "../../Shared/SectionBannar/SectionBannar"
+import Desserts from "./Desserts/Desserts"
 
 const Menu = () => {
     const [menu] = useMenu();
@@ -24,11 +25,7 @@ const Menu = () => {
             subtitle="Would you like to try a dish"
         />
        <TodaysOffer offered={offered}></TodaysOffer>
-       <SectinonBannar
-        bannar={dessertBG}
-        title="Desserts"
-        content="Delicious desserts to satisfy your sweet cravings."
-       />
+       <Desserts dessertBG={dessertBG} dessert={dessert}></Desserts>
     </div>
   )
 }
