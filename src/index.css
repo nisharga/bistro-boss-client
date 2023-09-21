@@ -25,3 +25,20 @@ ul.thumbs.animated {
 .ourmenu h2 {
   color: #ffff;
 }
+
+// react tabs
+.react-tabs ul.react-tabs__tab-list {
+  border-bottom: 0px;
+}
+
+ul li[aria-selected="true"] {
+  color: #bb8506;
+  border-bottom: 4px solid #bb8506;
+  font-weight: bold;
+}
+.react-tabs__tab {
+  border: none;
+}
+.react-tabs__tab-list {
+  border-bottom: none;
+}
