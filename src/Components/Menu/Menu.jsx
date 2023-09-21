@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async"
 import Cover from "../../Shared/Cover/Cover"
 import bannar from "../../assets/menu/banner3.jpg"
-import useMenu from "../../hooks/useMenu"
-import SectionTitle from "../../Shared/SectionTitle/SectionTitle"
-import MenuItem from "../../Shared/MenuItem/MenuItem"
+import dessertBG from "../../assets/menu/dessert-bg.jpeg"
+import useMenu from "../../hooks/useMenu"  
+import TodaysOffer from "./TodaysOffer/TodaysOffer"
+import SectinonBannar from "../../Shared/SectionBannar/SectionBannar"
 
 const Menu = () => {
     const [menu] = useMenu();
@@ -22,16 +23,12 @@ const Menu = () => {
             title="Our Menu" 
             subtitle="Would you like to try a dish"
         />
-        {/* section start  */}
-       <div className="pt-16">
-        <SectionTitle
-                title="TODAY'S OFFER" 
-                subtitle="Don't miss"
-            />
-       </div>
-       <div className="grid md:grid-cols-2 gap-4 container mx-auto pt-8 pb-16">
-        {offered?.map(data => <MenuItem data={data} key={data._id}></MenuItem>)}
-       </div>
+       <TodaysOffer offered={offered}></TodaysOffer>
+       <SectinonBannar
+        bannar={dessertBG}
+        title="Desserts"
+        content="Delicious desserts to satisfy your sweet cravings."
+       />
     </div>
   )
 }
