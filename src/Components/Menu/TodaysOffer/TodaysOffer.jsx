@@ -6,7 +6,7 @@ const TodaysOffer = ({offered}) => {
   return (
      <>
      <div className="pt-16">
-     <SectionTitle
+        <SectionTitle
              title="TODAY'S OFFER" 
              subtitle="Don't miss"
          />
