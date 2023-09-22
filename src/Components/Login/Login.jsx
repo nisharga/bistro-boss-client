@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true)
@@ -19,7 +19,6 @@ const Login = () => {
         if (validateCaptcha(user_captcha_value)) {
             setDisabled(false)
         }
-   
         else {
             setDisabled(true)
         }
