@@ -1,6 +1,8 @@
 import { Formik } from "formik";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import * as Yup from "yup";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 // Creating schema
 const schema = Yup.object().shape({
@@ -15,6 +17,9 @@ const schema = Yup.object().shape({
 
 
 const SignUp = () => { 
+  const [errorMessage, setErrorMessage] = useState(null);
+  const { createUser } = useContext(AuthContext)
+   
   return (
     <>
        <Helmet>
@@ -28,7 +33,15 @@ const SignUp = () => {
           // Alert the input values of the form that we filled
           const email = values.email; 
           const password = values.password; 
-          console.log(email, password);
+          try{
+            createUser(email, password)
+            .then(data => {
+              console.log(data)
+            })
+          }
+          catch(error){ 
+            setErrorMessage(error.message); 
+          }
         }}
       >
         {({
@@ -84,12 +97,15 @@ const SignUp = () => {
                 </p> 
                 </div>
                 <div className="form-control mt-6">
+                {errorMessage && (
+                  <div style={{ color: 'red' }}>{errorMessage}</div>
+                )}
                 <input 
                   type="submit" 
                   className="btn btn-primary" 
                   value="Sign Up" 
                 /> 
-                </div> 
+                </div>  
             </div>
             </form>
             <div className="text-center lg:text-left">
