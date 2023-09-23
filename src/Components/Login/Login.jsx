@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const {loginUser} = useContext(AuthContext)  
@@ -32,6 +33,9 @@ const Login = () => {
     }
   return (
     <div>
+        <Helmet>
+            <title>Bistro Boss | Login</title>
+        </Helmet>
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">  
             <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -64,6 +68,10 @@ const Login = () => {
                 <button onClick={handleValidate} className="btn btn-outline btn-info mt-3">Validate</button>
                 </div>
                 <div className="form-control mt-6">
+                <button className="btn btn-primary"
+                    disabled={disabled}
+                >Login</button>
+                </div> <div className="form-control mt-6">
                 <button className="btn btn-primary"
                     disabled={disabled}
                 >Login</button>
