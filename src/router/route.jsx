@@ -8,6 +8,7 @@ import Shop from "../Components/Shop/Shop";
 import ContactUs from "../Components/ContactUs/ContactUs";
 import Login from "../Components/Login/Login";
 import SignUp from "../Components/SignUp/SignUp";
+import PrivateRoute from "./Private/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/shop",
-            element: <Shop/>
+            element: <PrivateRoute><Shop/></PrivateRoute>
         },
         {
             path: "/contact",
