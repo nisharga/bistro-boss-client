@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import * as Yup from "yup";
 import { AuthContext } from "../../Providers/AuthProviders";
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
 
 // Creating schema
 const schema = Yup.object().shape({
@@ -38,6 +40,13 @@ const SignUp = () => {
             .then(data => {
               console.log(data)
             })
+
+            Swal.fire(
+              'Sign Up Successful',
+              'Verify Your Email',
+              'success'
+            )
+            
           }
           catch(error){ 
             setErrorMessage(error.message); 
