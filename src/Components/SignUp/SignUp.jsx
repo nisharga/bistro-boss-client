@@ -4,15 +4,17 @@ import { Helmet } from "react-helmet-async";
 import * as Yup from "yup";
 import { AuthContext } from "../../Providers/AuthProviders";
 // ES6 Modules or TypeScript
-import Swal from 'sweetalert2'
-import { getDatabase, ref, set } from "firebase/database";
-
+import Swal from 'sweetalert2'  
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Creating schema
 const schema = Yup.object().shape({
   name: Yup.string()
     .required("Name is a required field")
     .min(3, "Name must be at least 3 characters"),
+    url: Yup.string()
+    .required("url is a required field")
+    .min(3, "url must be at least 8 characters"),
   email: Yup.string()
     .required("Email is a required field")
     .email("Invalid email format"),
@@ -25,9 +27,17 @@ const schema = Yup.object().shape({
 
 const SignUp = () => { 
   const [errorMessage, setErrorMessage] = useState(null);
-  const { createUser } = useContext(AuthContext)
+  const { createUser, profileUpdate } = useContext(AuthContext)
   const [user, setUser] = useState(null);
-  const db = getDatabase();
+  /* const db = getDatabase();
+  const auth = getAuth(app); */
+ 
+   // private Route
+   let navigate = useNavigate();
+   let location = useLocation(); 
+   let from = location.state?.from?.pathname || "/";
+   // private Route
+
   return (
     <>
        <Helmet>
@@ -40,33 +50,44 @@ const SignUp = () => {
         onSubmit={(values) => {
           // Alert the input values of the form that we filled
           const name = values.name; 
+          const photoUrl = values.url; 
           const email = values.email; 
           const password = values.password;  
           try{
-            createUser(email, password)
-            .then(data => {
-              setUser(data)
-              set(ref(db, 'users/' + data.uid), {
-                username: name,
-                email: email,  
-              }); 
+          createUser(email, password)
+            .then(userCredential => {
+              const user = userCredential.user
+              setUser(user);
+               // Update user profile
+              profileUpdate(name, photoUrl)
+              .then(() => {
+                console.log("User Profile Updated");
+              })
+              .catch(err => {
+                console.log(err, "Of User Profile Updated");
+              })
+ 
               
             })
-
+            
             Swal.fire(
               'Sign Up Successful',
               'Verify Your Email',
               'success'
             )
          
-
-      console.log('User signed up successfully!', user);
+ 
             
           }
           catch(error){ 
             setErrorMessage(error.message); 
           }
-        }}
+
+          if(user){
+            navigate(from, { replace: true });
+          }
+        }
+      }
       >
         {({
           values,
@@ -98,6 +119,25 @@ const SignUp = () => {
                 {/* If validation is not passed show errors */}
                 <p className="error">
                   {errors.name && touched.name && errors.name}
+                </p>
+                </div>
+                <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Photo URL</span>
+                </label>
+                <input  
+                  className="input input-bordered" 
+                  type="text"
+                  name="url"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.url}
+                  placeholder="Put Your Image URL here"  
+                  id="url"
+                />
+                {/* If validation is not passed show errors */}
+                <p className="error">
+                  {errors.url && touched.url && errors.url}
                 </p>
                 </div>
                 <div className="form-control">

@@ -1,12 +1,14 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../Providers/AuthProviders';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import LoginContext from './LoginContext/LoginContext';
+import NewUserSignUp from './LoginContext/NewUserSignUp';
 
 const Login = () => {
     const {loginUser} = useContext(AuthContext)  
-    const [disabled, setDisabled] = useState(true)
+    const [disabledButton, setdisabledButton] = useState(true)
     const [user, setUser] = useState(true)
 
     // private Route
@@ -28,19 +30,19 @@ const Login = () => {
             const user = result.user;
             setUser(user)
         })
+        if(user){
+            navigate(from, { replace: true });
+        }
         e.preventDefault();
     }
-    
-    user && navigate(from, { replace: true });
+     
 
-    const handleValidate = () => {
-        const user_captcha_value = captchaRef.current.value;
+    const handleValidate = (e) => {
+        const user_captcha_value = captchaRef.current.value; 
         if (validateCaptcha(user_captcha_value)) {
-            setDisabled(false)
+            setdisabledButton(false)
         }
-        else {
-            setDisabled(true)
-        }
+        e.preventDefault();
     }
   return (
     <div>
@@ -68,10 +70,8 @@ const Login = () => {
                 </label>
                 </div>
                 <div className="form-control">
-                <label className="label">
-                    
-                    < LoadCanvasTemplate reloadColor="red" />
-                    
+                <label className="label"> 
+                    < LoadCanvasTemplate reloadColor="red" /> 
                 </label>
                 <input
                 ref={captchaRef} 
@@ -80,23 +80,15 @@ const Login = () => {
                 </div>
                 <div className="form-control mt-6">
                 <button className="btn btn-primary"
-                    disabled={disabled}
+                    disabled={disabledButton}
                 >Login</button>
                 </div> 
-                
-                <div className="form-control mt-6">
-                  <span className='text-[#D1A054]'> New here? 
-                    <Link
-                        className='font-bold'
-                        to="/signup"
-                  > Create a New Account</Link></span>
-                </div>
+                {/* New User Sign Up */}
+                <NewUserSignUp/>
             </div>
             </form>
-            <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            </div>
+            {/* Login Content Left Side */}
+            <LoginContext/>
         </div>
         </div>
     </div>
