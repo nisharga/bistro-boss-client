@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 import useCart from "../../hooks/useCart";
 const Navbar = () => {
   const {user, logout} = useContext(AuthContext) 
-  const [cart] = useCart()
-  console.log("cart is:", cart.data.length)
+  const [cart] = useCart() 
   return (
     <div className="navbar bg-base-100 fixed z-10 text-[#fff]">
   <div className="navbar-start">
@@ -46,8 +45,8 @@ const Navbar = () => {
       <li><a>
         <button className="btn mt-[-15px]">
            <AiOutlineShoppingCart/>
-          <div className="badge badge-secondary">+{cart?.data?.length || 0}</div>
-        </button>
+          <div className="badge badge-secondary">+{cart?.data?.length}</div>
+        </button> 
       </a></li>
     </ul>
   </div>

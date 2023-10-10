@@ -1,11 +1,37 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
+import Swal from "sweetalert2";
+import useCart from "../../../hooks/useCart";
 
 const SingleShopItem = ({data}) => { 
     // user get from auth
     const {user} = useContext(AuthContext) 
+    // refetch get from useCart 
+    const [refetch] = useCart() 
+
     const handleAddToCart = (id, name, price) => {
-        console.log(id, name, price, user?.email);
+        const cartItem = {id, name, price, email: user?.email}
+        fetch('http://localhost:5000/api/v1/order/create', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(cartItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data){
+                
+                Swal.fire(
+                    'Product Added', 
+                    'success'
+                  )
+                
+            }
+              // refech for featching the data
+              refetch()
+        })
+
     }
     return (
     <>

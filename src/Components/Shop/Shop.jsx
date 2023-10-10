@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Helmet } from "react-helmet-async"
 import Cover from './../../Shared/Cover/Cover';
 import shopBannar from "../../assets/shop/banner2.jpg";
