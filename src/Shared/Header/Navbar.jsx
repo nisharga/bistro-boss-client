@@ -1,12 +1,16 @@
 import { useContext } from "react";
 import "./Navbar.css";
 import { AuthContext } from "../../Providers/AuthProviders";
-// import logo from "../../assets/icon/Logo.png";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 import { Link } from 'react-router-dom';
+import useCart from "../../hooks/useCart";
 const Navbar = () => {
   const {user, logout} = useContext(AuthContext) 
+  const [cart] = useCart()
+  console.log("cart is:", cart.data.length)
   return (
-    <div className="navbar bg-base-100 fixed z-10">
+    <div className="navbar bg-base-100 fixed z-10 text-[#fff]">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,13 +43,19 @@ const Navbar = () => {
         </details>
       </li>
       <li><a>Item 3</a></li>
+      <li><a>
+        <button className="btn mt-[-15px]">
+           <AiOutlineShoppingCart/>
+          <div className="badge badge-secondary">+{cart?.data?.length || 0}</div>
+        </button>
+      </a></li>
     </ul>
   </div>
   <div className="navbar-end">
     {
       user ? 
       <>
-      <button className="btn glass" onClick={logout}>Sign Out</button>
+      <button className="btn glass text-[#fff] hover:text-blue-600 mt-[-15px]" onClick={logout}>Sign Out</button>
       </> : 
       <>
         <Link to="/login" className="btn glass">Log in</Link>

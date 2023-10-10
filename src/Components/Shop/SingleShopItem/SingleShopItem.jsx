@@ -1,6 +1,13 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProviders";
 
 const SingleShopItem = ({data}) => { 
-  return (
+    // user get from auth
+    const {user} = useContext(AuthContext) 
+    const handleAddToCart = (id, name, price) => {
+        console.log(id, name, price, user?.email);
+    }
+    return (
     <>
         <div className="card card-compact bg-[#F3F3F3] shadow-xl">
             <figure className="relative">
@@ -17,6 +24,8 @@ const SingleShopItem = ({data}) => {
             <div className="card-actions justify-center">
             <button
             className="text-[#BB8506] font-bold uppercase border-b-900 border-b rounded-bl rounded-br border-[#BB8506] pb-3 mt-5 bg-[#E8E8E8] py-2 px-4 hover:bg-[#09090a]"
+            // product add to database
+            onClick={() => handleAddToCart(data._id, data.name, data.price)}
             >Add To Cart</button>
             </div>
         </div>
