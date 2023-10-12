@@ -60,7 +60,7 @@ const SignUp = () => {
               setUser(user); 
                // Update user profile
               profileUpdate(name, photoUrl)
-              const saveData = { name, email, image: photoUrl }
+              const saveData = { name, email, image: photoUrl, role: 'user' }
               console.log("saveData", saveData);
               fetch('http://localhost:5000/api/v1/user', {
                 method: 'POST', 

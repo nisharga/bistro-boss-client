@@ -8,11 +8,11 @@ import { FaUsers } from "react-icons/fa6";
 const AdminDashNav = () => {
   return (
     <>
-    <li><NavLink to="/admin-dashboard"><HiHome/>Admin Home</NavLink> </li>
-    <li><NavLink to="/add-items"><ImSpoonKnife/>Add Items</NavLink> </li>
-    <li><NavLink to="/manage-items"><VscThreeBars/>Manage Items</NavLink> </li>
-    <li><NavLink to="/manage-booking"><FaBookMedical/>Manage Booking</NavLink> </li> 
-    <li><NavLink to="/all-users"><FaUsers/>All Users</NavLink> </li> 
+    <li><NavLink to="/dashboard/admin-dashboard"><HiHome/>Admin Home</NavLink> </li>
+    <li><NavLink to="/dashboard/add-items"><ImSpoonKnife/>Add Items</NavLink> </li>
+    <li><NavLink to="/dashboard/manage-items"><VscThreeBars/>Manage Items</NavLink> </li>
+    <li><NavLink to="/dashboard/manage-booking"><FaBookMedical/>Manage Booking</NavLink> </li> 
+    <li><NavLink to="/dashboard/all-users"><FaUsers/>All Users</NavLink> </li> 
     </>
   )
 }

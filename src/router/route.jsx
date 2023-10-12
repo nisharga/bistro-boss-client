@@ -11,6 +11,7 @@ import SignUp from "../Components/SignUp/SignUp";
 import PrivateRoute from "./Private/PrivateRoute"; 
 import Dashboard from './../UserDashView/Dashboard/Dashboard';
 import MyCart from './../UserDashView/MyCart/MyCart';
+import AllUser from "../AdminDashView/AllUser/AllUser";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         {
             path: "mycart",
             element: <MyCart/>
+        },
+        {
+            path: "all-users",
+            element: <AllUser/>
         }
       ]
     }
