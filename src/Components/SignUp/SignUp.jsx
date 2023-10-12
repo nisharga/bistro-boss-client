@@ -57,11 +57,32 @@ const SignUp = () => {
           createUser(email, password)
             .then(userCredential => {
               const user = userCredential.user
-              setUser(user);
+              setUser(user); 
                // Update user profile
               profileUpdate(name, photoUrl)
+              const saveData = { name, email, image: photoUrl }
+              console.log("saveData", saveData);
+              fetch('http://localhost:5000/api/v1/user', {
+                method: 'POST', 
+                headers: { 
+                  'content-type' : 'application/json'
+                },
+                body: JSON.stringify(saveData)
+              })
+              .then(res => res.json())
+              .then(data => {
+                if(data.statusCode == 200){
+                  Swal.fire(
+                    'Sign Up Successful',
+                    'Verify Your Email',
+                    'success'
+                  )
+                }
+              })
+
               .then(() => {
-                console.log("User Profile Updated");
+                // navigate to homepage
+                navigate('/') 
               })
               .catch(err => {
                 console.log(err, "Of User Profile Updated");
@@ -70,11 +91,7 @@ const SignUp = () => {
               
             })
             
-            Swal.fire(
-              'Sign Up Successful',
-              'Verify Your Email',
-              'success'
-            )
+            
          
  
             
