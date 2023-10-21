@@ -4,10 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import UserTable from "./UserTable/UserTable";
 
 const AllUser = () => {
+
     const { data: users = [], refetch } = useQuery(['users'], async() => {
         const res = await fetch('http://localhost:5000/api/v1/user');
         return res.json();
     })
+    
   return (
     <div className="py-8 bg-[#f6f6f6]">
         <Helmet>

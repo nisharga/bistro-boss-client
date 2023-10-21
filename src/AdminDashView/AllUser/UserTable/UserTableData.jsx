@@ -5,6 +5,9 @@ import { FaUserAlt } from "react-icons/fa";
 
 const UserTableData = ({user, index, refetch}) => {
   const {name, email, role, _id} = user
+  
+
+
   const handleUserActionChange = (id) => {
     Swal.fire({
         title: "Are you sure?",
@@ -16,6 +19,7 @@ const UserTableData = ({user, index, refetch}) => {
         confirmButtonText: "Yes, Change it",
       }).then((result) => {
         if (result.isConfirmed) {
+
               fetch(`http://localhost:5000/api/v1/user/${id}`, {
                 method: "PATCH",
                 headers: {
@@ -32,6 +36,7 @@ const UserTableData = ({user, index, refetch}) => {
                     refetch()
                 }
               })
+
         }
       });
     
@@ -47,6 +52,7 @@ const UserTableData = ({user, index, refetch}) => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
+
             fetch(`http://localhost:5000/api/v1/user/${id}`, {
                 method: "DELETE",
               })
@@ -56,7 +62,8 @@ const UserTableData = ({user, index, refetch}) => {
                     Swal.fire("Deleted!", "Your file has been deleted.", "success");
                     refetch()
                 }
-              })
+              }) 
+              
         }
       }); 
 }

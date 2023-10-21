@@ -1,7 +1,7 @@
 import UserTableData from "./UserTableData"
 
 const UserTable = ({users, refetch}) => {
-    console.log(users); 
+  
   return (
     <>
      <div className="overflow-x-auto">
