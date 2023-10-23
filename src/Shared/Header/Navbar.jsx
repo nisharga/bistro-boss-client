@@ -48,7 +48,7 @@ const Navbar = () => {
         </details>
       </li>
       <li><Link to='/shop'>Shop</Link></li>
-      <li><Link to='/contact'>Contact Us</Link></li>
+      <li><Link to='/dashboard'>Dashboard</Link></li>
       <li><a>
         <Link to='dashboard/mycart' className="btn mt-[-15px]">
            <AiOutlineShoppingCart/>

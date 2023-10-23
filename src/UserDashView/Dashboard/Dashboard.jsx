@@ -6,10 +6,14 @@ import { Outlet } from "react-router-dom";
 import UserDashNav from "./UserDashNav/UserDashNav";
 import AdminDashNav from "./AdminDashNav/AdminDashNav";
 import dashlogo from "../../assets/Dashboard/dashboardLogo.png";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  const user = 'admin';
+  
+  // const user = 'admin';
   const [cart] = useCart();
+  const [isAdmin, isAdminLoading] = useAdmin();
+  
   return (
     <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -33,9 +37,13 @@ const Dashboard = () => {
       </div>
       {/* If usr role is user then show UserDashNav */}
       {
-        user !== "admin" ? <UserDashNav cart={cart} /> : <AdminDashNav />
+        isAdminLoading && "Loading..........."
       }
-      {/* If usr role is admin then show AdminUserDashNav */}
+      {
+        isAdmin ? <AdminDashNav /> : <UserDashNav cart={cart} />  
+      }
+      
+      {/* { } */}
       {/* common dashboard link for all user */}
       <CommonDashNav />
     </ul> 

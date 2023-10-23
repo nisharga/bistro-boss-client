@@ -18,8 +18,7 @@ const AuthProviders = ({children}) => {
             
             if(currentUser){
               axios.post('http://localhost:5000/api/v1/user/jwtcreate', {email: currentUser.email})
-              .then(data => {
-                console.log(data.data.data);
+              .then(data => { 
                 localStorage.setItem('access-token', data.data.data)
               })
             }
@@ -51,7 +50,7 @@ const AuthProviders = ({children}) => {
     });
   };    
     const logout = () => {
-        setLoading(true);
+        setLoading(true); 
         return signOut(auth)
     }
 
