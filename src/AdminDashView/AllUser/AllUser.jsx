@@ -25,7 +25,7 @@ const AllUser = () => {
             <div className="bg-white">
               <div className="cartHeader uppercase flex flex-row justify-center items-center md:justify-start
               p-6">
-                <h3 className="text-2xl">Total users: {users?.data.length}</h3> 
+                <h3 className="text-2xl">Total users: {users?.data?.length | 0}</h3> 
               </div>
               <div className="cartTable">
                 { <UserTable users={users} refetch={refetch}/> }

@@ -20,13 +20,14 @@ const AuthProviders = ({children}) => {
               axios.post('http://localhost:5000/api/v1/user/jwtcreate', {email: currentUser.email})
               .then(data => { 
                 localStorage.setItem('access-token', data.data.data)
+                setLoading(false);
               })
             }
             else{
               localStorage.removeItem('access-token')
             }
 
-            setLoading(false);
+            
           });
           return() => {
             return unsubcribe();
