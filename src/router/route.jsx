@@ -13,6 +13,8 @@ import Dashboard from './../UserDashView/Dashboard/Dashboard';
 import MyCart from './../UserDashView/MyCart/MyCart';
 import AllUser from "../AdminDashView/AllUser/AllUser";
 import AdminRoute from "./Admin/AdminRoute";
+import AddItem from "../AdminDashView/AddItem/AddItem";
+import AddReview from "../AdminDashView/AddReview/AddReview";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
         {
             path: "all-users",
             element: <AdminRoute><AllUser/></AdminRoute>
+        },
+        {
+            path: "add-items",
+            element: <AdminRoute><AddItem/></AdminRoute>
+        },
+        {
+            path: "add-review",
+            element: <AddReview/>
         }
       ]
     }

@@ -23,7 +23,7 @@ const UserDashNav = ({cart}) => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/review"><AiOutlineFolderView/> Add Review</NavLink>
+        <NavLink to="/dashboard/add-review"><AiOutlineFolderView/> Add Review</NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/booking"><AiOutlineShoppingCart/> My Booking</NavLink>
