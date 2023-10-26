@@ -15,6 +15,7 @@ import AllUser from "../AdminDashView/AllUser/AllUser";
 import AdminRoute from "./Admin/AdminRoute";
 import AddItem from "../AdminDashView/AddItem/AddItem";
 import AddReview from "../AdminDashView/AddReview/AddReview";
+import ManageItems from "../AdminDashView/ManageItems/ManageItems";
 
 const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
         {
             path: "add-review",
             element: <AddReview/>
+        },
+        {
+            path: "manage-items",
+            element: <ManageItems/>
         }
       ]
     }
