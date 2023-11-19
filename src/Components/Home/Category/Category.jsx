@@ -17,10 +17,17 @@ import slide3 from "../../../assets/Category/slide3.jpg"
 import slide4 from "../../../assets/Category/slide4.jpg"
 import slide5 from "../../../assets/Category/slide5.jpg"
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+import { useEffect } from 'react';
 
 export const Category = () => {
+  useEffect(function () {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <div className='container mx-auto py-[60px]'>
+    <div className='container mx-auto py-[60px] ' >
          <SectionTitle
             subtitle={"From 11:00am to 10:00pm"}
             title={"ORDER ONLINE"}    

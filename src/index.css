@@ -80,3 +80,10 @@ li.btn-active {
   background-image: -webkit-linear-gradient(top, #5f5f5f, #5c5c5c);
   box-shadow: rgba(0, 0, 0, 0.75) 0 0 0 0 inset;
 }
+
+.rotate {
+  position: absolute;
+  left: 345px;
+  transform: rotate(-12deg);
+  x-index: -10px;
+}

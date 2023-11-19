@@ -7,6 +7,8 @@ import OurMenu from "./OurMenu/OurMenu"
 import { PopularMenu } from "./PopularMenu/PopularMenu"
 import Slider from "./Slider/Slider"
 import Tesmonial from "./Testimonial/Tesmonial"
+import AboutTeam from "./AboutTeam/AboutTeam"
+import MobileApp from "./MobileApp/MobileApp"
 
 const Home = () => {
   return (
@@ -22,7 +24,9 @@ const Home = () => {
           <Callus/>
           <Featured/>
           <OurMenu/>
+          <AboutTeam/>
           <Tesmonial/>
+          <MobileApp/>
         </div>
     </div>
   )

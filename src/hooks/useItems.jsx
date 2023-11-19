@@ -5,7 +5,7 @@ const useItems = (page = 1) => {
   const { refetch, data: items = [] } = useQuery(
     ["items", page], // Update the queryKey
     async () => {
-      const response = await fetch(`http://localhost:5000/api/v1/menu/getall?page=${page}&limit=2`);
+      const response = await fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/menu/getall?page=${page}&limit=2`);
       return response.json();
     }
   );

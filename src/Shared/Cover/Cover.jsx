@@ -6,8 +6,7 @@ const Cover = ({title, subtitle, image}) => {
     <div className="hero-content text-center text-neutral-content">
       <div className="max-w-md">
         <h1 className="mb-5 text-5xl font-bold">{title}</h1>
-        <p className="mb-5 md:text-2xl text-xl">{subtitle}</p>
-        
+        <p className="mb-5 md:text-2xl text-xl">{subtitle}</p> 
       </div>
     </div>
   </div>

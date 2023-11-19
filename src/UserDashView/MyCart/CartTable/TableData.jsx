@@ -18,7 +18,7 @@ const TableData = ({data}) => {
           }).then((result) => {
             if (result.isConfirmed) {
               
-              fetch(`http://localhost:5000/api/v1/order/delete/${id}`, {
+              fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/order/delete/${id}`, {
                 method: "DELETE",
               })
               .then(res => res.json())

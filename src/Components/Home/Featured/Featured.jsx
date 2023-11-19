@@ -5,10 +5,10 @@ import SingleFeaturedItem from "./SingleFeaturedItem/SingleFeaturedItem";
 const Featured = () => { 
     const [FeaturedData, setFeaturedData] = useState([]); 
     useEffect(() => {
-        fetch('menu.json')
+        fetch('https://bistro-boss-server-three-olive.vercel.app/api/v1/menu/getallmenu')
             .then(res => res.json())
             .then(data => {
-                const saladData = data.filter(item => item.category === "salad"); 
+                const saladData = data?.data.filter(item => item.category === "salad"); 
                 setFeaturedData(saladData);
             });
     }, [FeaturedData._id]);

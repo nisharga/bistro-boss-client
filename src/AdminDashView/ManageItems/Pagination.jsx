@@ -21,7 +21,7 @@ const Pagination = ({setUpdatedPage, setUpdateProductID}) => {
 
     
   const getPost = (page = 1) => {
-    axios.get(`http://localhost:5000/api/v1/menu/getall?page=${page}&limit=10`)
+    axios.get(`https://bistro-boss-server-three-olive.vercel.app/api/v1/menu/getall?page=${page}&limit=10`)
     .then(response => {
       // console.clear();
       console.log(response.data);
@@ -50,7 +50,7 @@ const Pagination = ({setUpdatedPage, setUpdateProductID}) => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/api/v1/menu/delete/${id}`, {
+            fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/menu/delete/${id}`, {
                 method: "DELETE",
               })
               .then(res => res.json())

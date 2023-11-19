@@ -1,5 +1,4 @@
-
-const UpdateItem = ({updateProductID, setUpdatedPage}) => {
+ const UpdateItem = ({updateProductID, setUpdatedPage}) => {
     const updatedItem = () => {
         setUpdatedPage(false)
     }

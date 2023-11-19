@@ -62,7 +62,7 @@ const SignUp = () => {
               profileUpdate(name, photoUrl)
               const saveData = { name, email, image: photoUrl, role: 'user' }
               console.log("saveData", saveData);
-              fetch('http://localhost:5000/api/v1/user', {
+              fetch('https://bistro-boss-server-three-olive.vercel.app/api/v1/user', {
                 method: 'POST', 
                 headers: { 
                   'content-type' : 'application/json'

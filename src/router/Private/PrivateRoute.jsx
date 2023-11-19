@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
   const {user, loading} = useContext(AuthContext);
   let location = useLocation();
     if (loading) {
-        return <Loading/>
+        return "Login First then you can view these page"
     }
     if (user) {
         return children;

@@ -15,7 +15,7 @@ const AddItemTable = () => {
        setLoading(true)
        const formData = new FormData();
     formData.append("image", e.target.files[0]);
-    const url = `http://localhost:5000/api/v1/file/create`;
+    const url = `https://bistro-boss-server-three-olive.vercel.app/api/v1/file/create`;
     fetch(url, {
       method: "POST",
       body: formData,
@@ -49,7 +49,7 @@ const AddItemTable = () => {
         axiosSecure.post('/api/v1/menu/create', saveData)
         .then(data => console.log(data))
 
-        fetch('http://localhost:5000/api/v1/menu/create', {
+        fetch('https://bistro-boss-server-three-olive.vercel.app/api/v1/menu/create', {
                 method: 'POST', 
                 headers: { 
                   'content-type' : 'application/json'

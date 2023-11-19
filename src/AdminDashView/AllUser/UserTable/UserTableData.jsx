@@ -20,7 +20,7 @@ const UserTableData = ({user, index, refetch}) => {
       }).then((result) => {
         if (result.isConfirmed) {
 
-              fetch(`http://localhost:5000/api/v1/user/${id}`, {
+              fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/user/${id}`, {
                 method: "PATCH",
                 headers: {
                   "Content-type": "application/json",
@@ -53,7 +53,7 @@ const UserTableData = ({user, index, refetch}) => {
       }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`http://localhost:5000/api/v1/user/${id}`, {
+            fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/user/${id}`, {
                 method: "DELETE",
               })
               .then(res => res.json())

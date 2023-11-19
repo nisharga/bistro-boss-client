@@ -12,7 +12,7 @@ const SingleShopItem = ({ data }) => {
 
     const handleAddToCart = (id, name, price) => {
         const cartItem = { id, name, price, image: data.image, email: user?.email }
-        fetch('http://localhost:5000/api/v1/order/create', {
+        fetch('https://bistro-boss-server-three-olive.vercel.app/api/v1/order/create', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

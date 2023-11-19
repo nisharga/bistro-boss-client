@@ -1,10 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { Helmet } from "react-helmet-async"
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle"
 import Pagination from "./Pagination";
-import { useState } from "react";
-import UpdateItem from "./updateItem";
-
-
+import { useState } from "react"; 
  
 const ManageItems = () => {
   const [updatePage, setUpdatedPage] = useState(false) 
@@ -28,7 +26,7 @@ const ManageItems = () => {
                 {/* <ManageItemsTable/> */}
                 {
                     updatePage 
-                    ? <UpdateItem updateProductID={updateProductID} setUpdatedPage={setUpdatedPage}/> 
+                    ? "<UpdateItem updateProductID={updateProductID} setUpdatedPage={setUpdatedPage}/> "
                     : <Pagination setUpdatedPage={setUpdatedPage} setUpdateProductID={setUpdateProductID}/>}
               </div>
             </div>
