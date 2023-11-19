@@ -1,6 +1,4 @@
-## Installation
-
-Live Site : https://bistro-boss-cafe.netlify.app/
+#### Live Site : https://bistro-boss-cafe.netlify.app/
 
 ## 🔥 Technology stack
 
