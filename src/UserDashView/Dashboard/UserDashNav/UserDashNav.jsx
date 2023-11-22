@@ -15,7 +15,7 @@ const UserDashNav = ({cart}) => {
         <NavLink to="/reservation"><AiFillCalendar/> Reservations</NavLink>
       </li>
       <li>
-        <NavLink to="/payment"><MdPayment/> Payment History</NavLink>
+        <NavLink to="/payment-histrory"><MdPayment/> Payment History</NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/mycart"><AiOutlineShoppingCart/> My Cart

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async"
 import useCart from "../../hooks/useCart"
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import CartTable from "./CartTable/CartTable";
+import { Link } from "react-router-dom";
 
 const MyCart = () => {
   const [cart] = useCart();
@@ -27,7 +28,7 @@ const MyCart = () => {
               p-6">
                 <h3 className="text-2xl">Total orders: {cart?.data?.length}</h3>
                 <h3 className="text-2xl">total price:{total}</h3>
-                <button className="btn btn-active bg-[#D1A054]">Pay</button>
+                <Link className="btn btn-active bg-[#D1A054]" to="/dashboard/payment">Pay</Link>
               </div>
               <div className="cartTable">
                 <CartTable cartData={cart.data}/>

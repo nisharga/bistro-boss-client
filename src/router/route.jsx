@@ -17,6 +17,7 @@ import AddItem from "../AdminDashView/AddItem/AddItem";
 import AddReview from "../AdminDashView/AddReview/AddReview";
 import ManageItems from "../AdminDashView/ManageItems/ManageItems";
 import AboutUs from "../Components/AboutUs/AboutUs";
+import Payment from "../UserDashView/Payment/payment";
 
 const router = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
         {
             path: "manage-items",
             element: <ManageItems/>
+        },
+        {
+            path: "payment",
+            element: <Payment/>
         }
       ]
     }
