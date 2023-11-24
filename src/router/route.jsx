@@ -18,6 +18,9 @@ import AddReview from "../AdminDashView/AddReview/AddReview";
 import ManageItems from "../AdminDashView/ManageItems/ManageItems";
 import AboutUs from "../Components/AboutUs/AboutUs";
 import Payment from "../UserDashView/Payment/payment";
+import Payconfirm from "../UserDashView/Payment/payconfirm";
+import PaymentHistory from "../UserDashView/PaymentHistrory/PaymentHistory";
+import ManageBooking from "../AdminDashView/ManageBooking/ManageBooking";
 
 const router = createBrowserRouter([
     {
@@ -71,6 +74,10 @@ const router = createBrowserRouter([
             element: <AdminRoute><AddItem/></AdminRoute>
         },
         {
+            path: "manage-booking",
+            element: <AdminRoute><ManageBooking/></AdminRoute>
+        },
+        {
             path: "add-review",
             element: <AddReview/>
         },
@@ -81,6 +88,12 @@ const router = createBrowserRouter([
         {
             path: "payment",
             element: <Payment/>
+        },{
+            path: "payconfirm/:id",
+            element: <Payconfirm/>
+        },{
+            path: "payment-histrory",
+            element: <PaymentHistory/>
         }
       ]
     }

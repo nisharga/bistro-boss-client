@@ -9,7 +9,7 @@ const MyCart = () => {
   // let total = 0;
   let total = 0;
   if (Array.isArray(cart?.data)) {
-    total = cart.data.reduce((sum, item) => item.price + sum, 0);
+    total = cart.data.reduce((sum, item) => item.price + sum, 0).toFixed(2);
   }
 
   // console.log(cart?.data, "from my cart page");
