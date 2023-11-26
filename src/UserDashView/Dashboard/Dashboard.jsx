@@ -7,6 +7,7 @@ import UserDashNav from "./UserDashNav/UserDashNav";
 import AdminDashNav from "./AdminDashNav/AdminDashNav";
 import dashlogo from "../../assets/Dashboard/dashboardLogo.png";
 import useAdmin from "../../hooks/useAdmin";
+import Loading from "../../Shared/Loading/Loading";
 
 const Dashboard = () => {
   
@@ -18,7 +19,7 @@ const Dashboard = () => {
     <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content">
-    
+     
     {/* outlet */}
     <Outlet/>
     {/* outlet */}
@@ -37,7 +38,7 @@ const Dashboard = () => {
       </div>
       {/* If usr role is user then show UserDashNav */}
       {
-        isAdminLoading && "Loading..........."
+        isAdminLoading && <Loading/>
       }
       {
         isAdmin ? <AdminDashNav /> : <UserDashNav cart={cart} />  

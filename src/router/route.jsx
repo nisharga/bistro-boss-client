@@ -21,6 +21,9 @@ import Payment from "../UserDashView/Payment/payment";
 import Payconfirm from "../UserDashView/Payment/payconfirm";
 import PaymentHistory from "../UserDashView/PaymentHistrory/PaymentHistory";
 import ManageBooking from "../AdminDashView/ManageBooking/ManageBooking";
+import AdminDashboard from "../AdminDashView/AdminDashboard/AdminDashboard";
+import UserHome from './../UserDashView/UserHome/UserHome';
+
 
 const router = createBrowserRouter([
     {
@@ -59,13 +62,16 @@ const router = createBrowserRouter([
     },
     {
       path: "/dashboard",
-      element: <PrivateRoute><Dashboard/></PrivateRoute>,
+      element: <PrivateRoute><><Dashboard/><UserHome/></></PrivateRoute>,
       children: [
         {
             path: "mycart",
             element: <MyCart/>
         },
         {
+            path: "admin-dashboard",
+            element: <AdminRoute><AdminDashboard/></AdminRoute>
+        },{
             path: "all-users",
             element: <AdminRoute><AllUser/></AdminRoute>
         },
