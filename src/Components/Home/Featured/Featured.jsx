@@ -19,7 +19,7 @@ const Featured = () => {
             title="CHEF RECOMMENDS"
             subtitle="Should Try"
         />
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 p-4">
             { FeaturedData?.slice(0, 3).map(data => <SingleFeaturedItem
                 key={data._id}
                 data={data}

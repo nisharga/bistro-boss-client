@@ -88,7 +88,7 @@ const Tesmonial = () => {
                         />
                         </div>
                         <div className="text-6xl flex justify-center mb-3"><FaQuoteLeft/></div>
-                        <h3 className="text-md py-3">{data?.details}</h3>
+                        <h3 className="text-base lg:text-lg py-3">{data?.details}</h3>
                         <h2 className="text-xxl uppercase text-[#CD9003] font-bold">{data?.name}</h2>
                     </div>
                 </SwiperSlide>

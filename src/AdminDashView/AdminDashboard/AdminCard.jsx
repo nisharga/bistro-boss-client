@@ -9,7 +9,7 @@ const AdminCard = ({revenue, customers, products, orders}) => {
                 <div className="bg-gradient-to-br from-purple-600 to-pink-100 py-6 px-20 rounded-lg flex space-x-4 items-center justify-center">
                     <div className="text-5xl text-white"><IoWalletOutline/></div>
                     <div className="">
-                    <div className="text-4xl text-white font-bold">{revenue | 0}</div>
+                    <div className="text-4xl text-white font-bold">${revenue | 0}</div>
                     <div className="text-xl text-white font-semibold">Revenue</div>
                     </div>
                 </div> 

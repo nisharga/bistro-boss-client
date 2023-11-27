@@ -5,17 +5,17 @@ const OurMenu = () => {
      
   return (
     <div className={`bg-no-repeat bg-cover bg-center relative ourmenu py-16 z-[1] bg-fixed`} 
-  style={{ backgroundImage: `url(${featured})`, height: '800px'}} >
-    <div className="absolute inset-0 bg-black opacity-80 z-[-1] h-[800px]"></div>
+  style={{ backgroundImage: `url(${featured})`, minHeight: '800px'}} >
+    <div className="absolute inset-0 bg-black opacity-80 z-[-1] min-h-[800px]"></div>
         <SectionTitle
             title="FROM OUR MENU"
             subtitle="Check it out"
         />
-       <div className="container mx-auto flex justify-center items-center mt-12 md:mt-6">
+       <div className="container mx-auto md:flex md:ustify-center md:items-center mt-12 md:mt-6">
             <div className="p-8">
                 <img src={featured} alt="our menu image" className="bg-no-repeat bg-cover bg-center  "/>
             </div>
-            <div className="text-[#fff]">
+            <div className="text-[#fff] p-8">
                 <p className="text-lg">March 20, 2023</p>
                 <p className="text-lg">WHERE CAN I GET SOME?</p>
                 <p className="pr-4 py-3">Craving something delicious? Explore our curated selection of local eateries and popular food delivery services. From mouthwatering meals to delightful desserts, discover a variety of options to satisfy your cravings. Order now and treat yourself to a delightful dining experience!</p>

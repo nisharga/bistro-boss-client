@@ -2,15 +2,15 @@ import { BsFacebook, BsFillPhoneVibrateFill, BsLinkedin } from 'react-icons/bs';
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle"
 const AboutTeam = () => {
     return (
-        <div className="container mx-auto pt-10">
+        <div className="container mx-auto pt-10 overflow-hidden">
              <SectionTitle
                 title="OUR POPULAR CHEFS"
                 subtitle="Check it out"
             />
-            <div className="grid lg:grid-cols-4  md:grid-cols-2  gap-4 py-6">
-                <div className="flex justify-center">
-                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-red-500 rounded-xl">
-                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="flex justify-center ">
+                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-[#e5e7eb]-500 rounded-xl">
+                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] p-4">
                             <div className="absolute inset-0">
                                 <img
                                     className="h-full w-full rounded-xl object-cover shadow-xl "
@@ -35,9 +35,9 @@ const AboutTeam = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center">
-                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-red-500 rounded-xl">
-                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="flex justify-center ">
+                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-[#e5e7eb]-500 rounded-xl">
+                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] p-4">
                             <div className="absolute inset-0">
                                 <img
                                     className="h-full w-full rounded-xl object-cover shadow-xl "
@@ -62,9 +62,9 @@ const AboutTeam = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center">
-                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-red-500 rounded-xl">
-                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="flex justify-center  ">
+                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-[#e5e7eb]-500 rounded-xl">
+                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] p-4">
                             <div className="absolute inset-0">
                                 <img
                                     className="h-full w-full rounded-xl object-cover shadow-xl "
@@ -89,9 +89,9 @@ const AboutTeam = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center">
-                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-red-500 rounded-xl">
-                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="flex justify-center  ">
+                    <div className="group h-96 w-80 [perspective:1000px] border-2 border-[#e5e7eb]-500 rounded-xl">
+                        <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] p-4">
                             <div className="absolute inset-0">
                                 <img
                                     className="h-full w-full rounded-xl object-cover shadow-xl "
