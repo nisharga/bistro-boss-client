@@ -19,7 +19,7 @@ const ManageBookingTable = ( ) => {
       }, [paymentDetails])
 
       const handleStatusChange = (id) => {
-        fetch(`http://localhost:5000/api/v1/payment/${id}`, {
+        fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/payment/${id}`, {
         method: "PATCH",
         headers: {
                 "Content-type": "application/json",

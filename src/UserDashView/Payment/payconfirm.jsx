@@ -45,7 +45,7 @@ const Payconfirm = () => {
         const paymentIntent = urlParams.get('payment_intent');
         setTexid(paymentIntent)
 
-            fetch("http://localhost:5000/api/v1/payment", {
+            fetch("https://bistro-boss-server-three-olive.vercel.app/api/v1/payment", {
                     method: "POST",
                     headers: {
                     "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const Payconfirm = () => {
                 // Redirect to the homepage
                 // window.location.href = '/';
                      // delete from cart
-    fetch(`http://localhost:5000/api/v1/order/deletebyemail/${user?.email}`, {
+    fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/order/deletebyemail/${user?.email}`, {
         method: "DELETE",
         headers: {
           "authorization": `bearer ${token}`,

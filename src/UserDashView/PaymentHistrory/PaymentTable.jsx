@@ -19,7 +19,7 @@ const PaymentTable = ( ) => {
     console.log("🚀 ~ file: PaymentTable.jsx:18 ~ filteredData ~ filteredData:", filteredData)
 
     useEffect(() => {
-            fetch(`http://localhost:5000/api/v1/payment/searchbyemail/${user?.email}`, {
+            fetch(`https://bistro-boss-server-three-olive.vercel.app/api/v1/payment/searchbyemail/${user?.email}`, {
                     method: "GET",
                     headers: {
                         "authorization": `bearer ${token}`,
