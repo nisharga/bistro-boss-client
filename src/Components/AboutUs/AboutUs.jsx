@@ -2,12 +2,12 @@
 import pagebannar from "../../assets/Slider/01.jpg";
 import img1 from "../../assets/Slider/02.jpg"; 
 import img2 from "../../assets/Slider/01.jpg"; 
-import { FaMoneyBillAlt } from "react-icons/fa";
-import { VscWorkspaceTrusted } from "react-icons/vsc";
-import { FaFortAwesome } from "react-icons/fa";
-import { TbPremiumRights } from "react-icons/tb";
-import { FaGlassCheers } from "react-icons/fa";
-import { MdFamilyRestroom } from "react-icons/md";
+// import { FaMoneyBillAlt } from "react-icons/fa";
+// import { VscWorkspaceTrusted } from "react-icons/vsc";
+// import { FaFortAwesome } from "react-icons/fa";
+// import { TbPremiumRights } from "react-icons/tb";
+// import { FaGlassCheers } from "react-icons/fa";
+// import { MdFamilyRestroom } from "react-icons/md";
 import "./style.css"
 
 
@@ -50,12 +50,8 @@ const AboutUs = () => {
        Why Select Us for <br/> Your vacation
       </h2> 
           <p className="mt-3 lg:text-lg text-md text-gray-500 dark:text-gray-300 md:text-sm lg:mr-20 mr-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,<br/>
-              laudantium quia tempore delect
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
-              laudantium quia tempore delect<br/>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
-              laudantium quia tempore delect
+          Welcome to Bistro Boss! We are passionate about delivering exquisite culinary experiences to tantalize your taste buds. Our journey began with a shared love for exceptional food and a commitment to bring that joy to your table. <br/>
+          At Bistro Boss, we curate a diverse menu, blending flavors and traditions to create memorable dining moments. Whether you crave comfort classics or adventurous cuisines, our chefs craft each dish with precision and passion.
           </p>
       </div> 
       
@@ -82,11 +78,12 @@ const AboutUs = () => {
     </div>
 
 
-    <div className="bg-gray-50 py-10">
+    
+   {/*  <div className="bg-gray-50 py-10">
       <SectionTitle title="features" subtitle="why choose us"/>
       <div className="grid grid-cols-12 gap-6 p-4 mx-10">
         <div className="lg:col-span-4 col-span-6 relative">
-          {/* overlay */} 
+          
           <div className="overlay opacity-90">
             <div className="text-white">ji</div>
           </div>
@@ -97,8 +94,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-    </div>
-
+    </div> */}
 
     
   </div>

@@ -210,7 +210,7 @@ const SignUp = () => {
             </form>
             <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Sign Up!</h1>
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <p className="py-6 pr-5">Join us today! Create your account with a few simple steps. Unlock exclusive benefits and be part of our community.</p>
             </div>
         </div>
         </div>

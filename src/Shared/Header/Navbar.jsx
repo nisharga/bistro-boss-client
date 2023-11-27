@@ -16,15 +16,19 @@ const Navbar = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow   rounded-box w-52 bg-[#D99904]">
-        <li><a>Item 1</a></li>
+      <li><Link to='/'>Home</Link></li>
+      <li><Link to='/menu'>Our Menu</Link></li>
         <li>
-          <a>Parent</a>
+          <a>Others</a>
           <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+          <li><Link to='/aboutus'>About Us</Link></li>
+            <li>
+            <Link to='/contact'>Contact Us</Link>
+            </li>
           </ul>
         </li>
-        <li><a>Item 3</a></li>
+        <li><Link to='/shop'>Shop</Link></li>
+      <li><Link to='/signup'>Sign Up</Link></li> 
       </ul>
     </div>
     <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -33,22 +37,24 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex ">
     <ul className="menu menu-horizontal px-1">
+      <li><Link to='/'>Home</Link></li>
       <li><Link to='/menu'>Our Menu</Link></li>
       <li tabIndex={0}>
         <details>
-          <summary>Authentication</summary>
+          <summary>Others</summary>
           <ul className="p-2 bg-[#d99904]">
+          <li><Link to='/dashboard/user'>User Dashboard</Link></li>
+            <li><Link to='/dashboard/admin-dashboard'>Admin Dashboard</Link></li>
+            
+            <li><Link to='/aboutus'>About Us</Link></li>
             <li>
-              <Link to='/signup'>Sign Up</Link>
-            </li>
-            <li>
-            <Link to='/signup'>Log in</Link>
+            <Link to='/contact'>Contact Us</Link>
             </li>
           </ul>
         </details>
       </li>
       <li><Link to='/shop'>Shop</Link></li>
-      <li><Link to='/dashboard'>Dashboard</Link></li>
+      <li><Link to='/signup'>Sign Up</Link></li> 
       <li><a>
         <Link to='dashboard/mycart' className="btn mt-[-15px]">
            <AiOutlineShoppingCart/>
