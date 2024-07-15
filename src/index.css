@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Manrope:wght@300;500;700;800&family=Poppins:wght@300;500;700;800;900&display=swap");
-
-// carousel image center
+ 
 ul.thumbs.animated {
   text-align: center !important;
-}
-// carousel dots color
+} 
 .carousel .control-dots .dot.selected {
   background: #007aff !important;
 }
@@ -19,16 +17,14 @@ ul.thumbs.animated {
 ul.thumbs.animated {
   text-align: center;
 }
-
-// our menu
+ 
 .ourmenu h4 {
   color: #d99904;
 }
 .ourmenu h2 {
   color: #ffff;
 }
-
-// react tabs
+ 
 .react-tabs ul.react-tabs__tab-list {
   border-bottom: 0px;
 }

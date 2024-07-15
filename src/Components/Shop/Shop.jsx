@@ -6,8 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
 import SingleShopItem from './SingleShopItem/SingleShopItem';
 import { useState } from "react";
-import useMenu from "../../hooks/useMenu";
-
+import useMenu from "../../hooks/useMenu"; 
 import Loading from "../../Shared/Loading/Loading";
 const Shop = () => {
     const [index, setIndex] = useState(0);

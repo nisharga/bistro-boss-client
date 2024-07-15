@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { AuthContext } from "../../Providers/AuthProviders";
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2'  
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 
 // Creating schema
 const schema = Yup.object().shape({
@@ -206,13 +206,14 @@ const SignUp = () => {
                   value="Sign Up" 
                 /> 
                 </div>  
-            </div>
+            </div> 
             </form>
+           
             <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Sign Up!</h1>
             <p className="py-6 pr-5">Join us today! Create your account with a few simple steps. Unlock exclusive benefits and be part of our community.</p>
             </div>
-        </div>
+         </div>
         </div>
         )}
       </Formik>

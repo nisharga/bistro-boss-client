@@ -64,7 +64,7 @@ const Tesmonial = () => {
             title="TESTIMONIALS"
             subtitle="What Our Clients Say"
         /> 
-         <div> 
+         <div className=" "> 
          <Swiper
           cssMode={true}
           navigation={true} 
@@ -79,7 +79,7 @@ const Tesmonial = () => {
             {
                 review?.map(data => 
                 <SwiperSlide key={data._id}>
-                    <div className="p-6 md:p-12 text-center">
+                    <div className=" p-12 text-center ">
                         <div className="flex justify-center mb-6">
                         <Rating
                             style={{ maxWidth: 180 }}

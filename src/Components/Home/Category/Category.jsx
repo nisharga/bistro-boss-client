@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 // import './Category.css';
 
 // import required modules
-import { FreeMode, Pagination } from 'swiper/modules';
+import { Autoplay, FreeMode, Pagination } from 'swiper/modules';
 // img list 
 import slide1 from "../../../assets/Category/slide1.jpg"
 import slide2 from "../../../assets/Category/slide2.jpg"
@@ -32,35 +32,53 @@ export const Category = () => {
             subtitle={"From 11:00am to 10:00pm"}
             title={"ORDER ONLINE"}    
         />
-    <Swiper
-             slidesPerView={4}
-             spaceBetween={30}
+    <Swiper 
              freeMode={true}
              pagination={{
                clickable: true,
              }}
-             modules={[FreeMode, Pagination]}
-             className="mySwiper"
+             autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            modules={[FreeMode, Pagination, Autoplay]}
+             className="mySwiper pb-20"
+             breakpoints={{
+              // when window width is >= 320px
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              // when window width is >= 768px
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+            }}
+            
     >
       <SwiperSlide>
-        <img src={slide1} alt="slide1" />
-        <h3 className='text-2xl lg:text-4xl uppercase text-center text-white -mt-20'>salad</h3>
+        <img src={slide1} alt="slide1" /> 
       </SwiperSlide> 
       <SwiperSlide>
-        <img src={slide2} alt="slide2" />
-        <h3 className='text-2xl lg:text-4xl uppercase text-center text-white -mt-20'>soups</h3>
+        <img src={slide2} alt="slide2" /> 
       </SwiperSlide> 
       <SwiperSlide>
-        <img src={slide3} alt="slide3" />
-        <h3 className='text-2xl lg:text-4xl uppercase text-center text-white -mt-20'>pizza</h3>
+        <img src={slide3} alt="slide3" /> 
       </SwiperSlide> 
       <SwiperSlide>
-        <img src={slide4} alt="slide4" />
-        <h3 className='text-2xl lg:text-4xl uppercase text-center text-white -mt-20'>desserts</h3>
+        <img src={slide4} alt="slide4" /> 
       </SwiperSlide> 
       <SwiperSlide>
-        <img src={slide5} alt="slide5" />
-        <h3 className='text-2xl lg:text-4xl uppercase text-center text-white -mt-20'>Salasa</h3>
+        <img src={slide5} alt="slide5" /> 
+      </SwiperSlide> 
+      <SwiperSlide>
+        <img src={slide2} alt="slide2" /> 
       </SwiperSlide> 
     </Swiper>
     </div>
