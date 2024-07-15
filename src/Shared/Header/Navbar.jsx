@@ -5,9 +5,11 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { Link } from 'react-router-dom';
 import useCart from "../../hooks/useCart"; 
+import useAdmin from "../../hooks/useAdmin";
 const Navbar = () => {
   const {user, logout} = useContext(AuthContext) 
   const [cart] = useCart() 
+  const [isAdmin] = useAdmin()
   return (
     <div className="navbar bg-base-100 fixed z-10 text-[#fff]">
   <div className="navbar-start">
@@ -28,7 +30,7 @@ const Navbar = () => {
           </ul>
         </li>
         <li><Link to='/shop'>Shop</Link></li>
-      <li><Link to='/signup'>Sign Up</Link></li> 
+       
       </ul>
     </div>
     <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -39,13 +41,27 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1">
       <li><Link to='/'>Home</Link></li>
       <li><Link to='/menu'>Our Menu</Link></li>
+      
+      <li><Link to='/shop'>Shop</Link></li> 
+      {
+        isAdmin && <li><Link to='/dashboard/admin-dashboard'>Admin Dashboard</Link></li>
+      } 
+      {
+        !isAdmin && <li><Link to='/dashboard/user'>User Dashboard</Link></li>
+      }
+      {
+        user ? "" : <li><Link to='/signup'>Sign Up</Link></li>
+      }
+      <li><a>
+        <Link to='dashboard/mycart' className="btn mt-[-15px]">
+           <AiOutlineShoppingCart/>
+          <div className="badge badge-secondary">+{cart?.data?.length}</div>
+        </Link> 
+      </a></li>
       <li tabIndex={0}>
         <details>
           <summary>Others</summary>
           <ul className="p-2 bg-[#d99904]">
-          <li><Link to='/dashboard/user'>User Dashboard</Link></li>
-            <li><Link to='/dashboard/admin-dashboard'>Admin Dashboard</Link></li>
-            
             <li><Link to='/aboutus'>About Us</Link></li>
             <li>
             <Link to='/contact'>Contact Us</Link>
@@ -53,14 +69,6 @@ const Navbar = () => {
           </ul>
         </details>
       </li>
-      <li><Link to='/shop'>Shop</Link></li>
-      <li><Link to='/signup'>Sign Up</Link></li> 
-      <li><a>
-        <Link to='dashboard/mycart' className="btn mt-[-15px]">
-           <AiOutlineShoppingCart/>
-          <div className="badge badge-secondary">+{cart?.data?.length}</div>
-        </Link> 
-      </a></li>
     </ul>
   </div>
   <div className="navbar-end">

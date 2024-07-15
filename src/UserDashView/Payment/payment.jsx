@@ -43,7 +43,7 @@ const Payment = () => {
     return (
         <div className="pt-10 flex flex-col items-center">
             <SectionTitle title={`payment ${price}$`}  subtitle="confirm your order" />
-             
+            
             <div className="lg:w-2/3
              p-4 min-w-[300px]">
             {clientSecret && (
@@ -51,6 +51,25 @@ const Payment = () => {
                     <InjectedCheckoutForm />
                 </Elements>
             )}
+            </div>
+
+            <div className="flex flex-col lg:flex-row gap-6">
+                <div className="card bg-primary text-primary-content w-96">
+                  <div className="card-body">
+                    <h2 className="card-title">Test Visa Card</h2>
+                    <p>Card Number: 4242424242424242</p>
+                    <p>Expiration: 11/27</p>  
+                    <p>CVC: 123</p>  
+                  </div>
+                </div> 
+                <div className="card bg-primary text-primary-content w-96">
+                  <div className="card-body">
+                    <h2 className="card-title">Test American Express Card</h2>
+                    <p>Card Number: 371449635398431</p>
+                    <p>Expiration: 11/27</p>  
+                    <p>CVC: 123</p>    
+                  </div>
+                </div>
             </div>
         </div>
     );
